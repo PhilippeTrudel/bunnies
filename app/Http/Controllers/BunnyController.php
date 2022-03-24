@@ -14,7 +14,9 @@ class BunnyController extends Controller
      */
     public function index()
     {
-        return view('bunny.index', Bunny::all());
+        return view('bunny.index', [
+            'bunnies' => Bunny::all()
+        ]);
     }
 
     /**
@@ -48,7 +50,7 @@ class BunnyController extends Controller
      */
     public function show(Bunny $bunny)
     {
-        return view('bunny.show', $bunny);
+        return view('bunny.show', ['bunny' => $bunny]);
     }
 
     /**
@@ -59,7 +61,7 @@ class BunnyController extends Controller
      */
     public function edit(Bunny $bunny)
     {
-        return view('bunny.edit', $bunny);
+        return view('bunny.edit', ['bunny' => $bunny]);
     }
 
     /**
